@@ -628,3 +628,61 @@ if(logoutBtn){
     );
 
 }
+
+/* =========================
+   EXPORT CSV
+========================= */
+
+const exportBtn =
+document.getElementById(
+    "exportBtn"
+);
+
+if(exportBtn){
+
+    exportBtn.addEventListener(
+        "click",
+        () => {
+
+            let csv =
+            "Name,Email,Phone,Source,Status\n";
+
+            leads.forEach(
+                lead => {
+
+                csv +=
+                `${lead.name},
+${lead.email},
+${lead.phone},
+${lead.source},
+${lead.status}\n`;
+
+            });
+
+            const blob =
+            new Blob(
+                [csv],
+                {type:"text/csv"}
+            );
+
+            const url =
+            URL.createObjectURL(
+                blob
+            );
+
+            const a =
+            document.createElement(
+                "a"
+            );
+
+            a.href = url;
+
+            a.download =
+            "crm-leads.csv";
+
+            a.click();
+
+        }
+    );
+
+}
