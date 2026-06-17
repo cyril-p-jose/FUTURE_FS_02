@@ -715,3 +715,26 @@ ${lead.status}\n`;
     );
 
 }
+/* =========================
+   WELCOME ADMIN
+========================= */
+
+const adminEmail =
+localStorage.getItem(
+    "adminEmail"
+);
+
+const welcomeAdmin =
+document.getElementById(
+    "welcomeAdmin"
+);
+
+if(
+    adminEmail &&
+    welcomeAdmin
+){
+
+    welcomeAdmin.textContent =
+    `Welcome, ${adminEmail}`;
+
+}
