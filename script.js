@@ -157,6 +157,7 @@ function renderLeads(data = leads){
                 </span>
 
             </td>
+            <td>${lead.createdAt || "N/A"}</td>
 
             <td>
 
@@ -256,32 +257,36 @@ leadForm.addEventListener(
 
         const lead = {
 
-            id: Date.now(),
+    id: Date.now(),
 
-            name:
-            document.getElementById(
-                "leadName"
-            ).value,
+    name:
+    document.getElementById(
+        "leadName"
+    ).value,
 
-            email:
-            document.getElementById(
-                "leadEmail"
-            ).value,
+    email:
+    document.getElementById(
+        "leadEmail"
+    ).value,
 
-            phone:
-            document.getElementById(
-                "leadPhone"
-            ).value,
+    phone:
+    document.getElementById(
+        "leadPhone"
+    ).value,
 
-            source:
-            document.getElementById(
-                "leadSource"
-            ).value,
+    source:
+    document.getElementById(
+        "leadSource"
+    ).value,
 
-            status:"New",
+    status:"New",
 
-            notes:[]
-        };
+    createdAt:
+    new Date()
+    .toLocaleDateString(),
+
+    notes:[]
+};
 
         leads.push(lead);
 
