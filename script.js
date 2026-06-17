@@ -81,30 +81,54 @@ function saveLeads(){
 
 function updateStats(){
 
+    const total =
+    leads.length;
+
+    const newCount =
+    leads.filter(
+        lead =>
+        lead.status === "New"
+    ).length;
+
+    const contacted =
+    leads.filter(
+        lead =>
+        lead.status === "Contacted"
+    ).length;
+
+    const converted =
+    leads.filter(
+        lead =>
+        lead.status === "Converted"
+    ).length;
+
     document.getElementById(
         "totalLeads"
-    ).textContent = leads.length;
+    ).textContent = total;
 
     document.getElementById(
         "newLeads"
-    ).textContent =
-    leads.filter(
-        lead => lead.status === "New"
-    ).length;
+    ).textContent = newCount;
 
     document.getElementById(
         "contactedLeads"
-    ).textContent =
-    leads.filter(
-        lead => lead.status === "Contacted"
-    ).length;
+    ).textContent = contacted;
 
     document.getElementById(
         "convertedLeads"
+    ).textContent = converted;
+
+    const rate =
+    total === 0
+    ? 0
+    : Math.round(
+      (converted/total)*100
+      );
+
+    document.getElementById(
+        "conversionRate"
     ).textContent =
-    leads.filter(
-        lead => lead.status === "Converted"
-    ).length;
+    rate + "%";
 
 }
 
