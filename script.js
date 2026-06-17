@@ -569,3 +569,33 @@ function filterLeads(){
 
 renderLeads();
 
+/* =========================
+   LOGOUT
+========================= */
+
+const logoutBtn =
+document.getElementById(
+    "logoutBtn"
+);
+
+if(logoutBtn){
+
+    logoutBtn.addEventListener(
+        "click",
+        () => {
+
+            localStorage.removeItem(
+                "loggedIn"
+            );
+
+            localStorage.removeItem(
+                "adminEmail"
+            );
+
+            window.location.href =
+            "login.html";
+
+        }
+    );
+
+}
