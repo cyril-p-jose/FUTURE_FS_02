@@ -129,6 +129,35 @@ function updateStats(){
         "conversionRate"
     ).textContent =
     rate + "%";
+   const newPercent =
+total === 0
+? 0
+: (newCount/total)*100;
+
+const contactedPercent =
+total === 0
+? 0
+: (contacted/total)*100;
+
+const convertedPercent =
+total === 0
+? 0
+: (converted/total)*100;
+
+document.getElementById(
+    "newBar"
+).style.width =
+newPercent + "%";
+
+document.getElementById(
+    "contactedBar"
+).style.width =
+contactedPercent + "%";
+
+document.getElementById(
+    "convertedBar"
+).style.width =
+convertedPercent + "%";
 
 }
 
