@@ -614,3 +614,19 @@ tbody tr:hover{
     }
 
 }
+#exportBtn{
+
+    background:#1f8fff;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    margin-left:10px;
+}
